@@ -2,7 +2,7 @@ void problemSolution1(float consumed_water) {
     float cost;
     // write your code here
 
-     totalCost = 13.0;
+    cost = 13.0;
 
   // Calculate charges for first 30 cubic meters
   if (consumed_water > 0) {
