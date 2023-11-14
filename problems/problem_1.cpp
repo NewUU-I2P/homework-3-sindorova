@@ -1,35 +1,17 @@
-void problemSolution1(float consumed_water) {
-    float cost;
-    // write your code here
-cout << "Enter water consumption in cubic meters: ";
-  cin >> consumption;
-
-  // Calculate the total cost
-  cost = 13.0;
-  if (consumption > 0) {
-    if (consumption <= 30) {
-      cost += consumption * 0.4;
+float problemSolution1(float consumed_water) {
+    float cost = 13; // fixed amount
+    if (consumed_water > 60) {
+        cost += 30 * 0.4 + 20 * 0.12 + 10 * 1.4 + (consumed_water - 60) * 1.5;
+    } else if (consumed_water > 50) {
+        cost += 30 * 0.4 + 20 * 0.12 + (consumed_water - 50) * 1.4;
+    } else if (consumed_water > 30) {
+        cost += 30 * 0.4 + (consumed_water - 30) * 0.12;
     } else {
-      cost += 30 * 0.4;
-
-      if (consumption <= 50) {
-        cost += (consumption - 30) * 0.12;
-      } else {
-        cost += 20 * 0.12;
-
-        if (consumption <= 60) {
-          cost += (consumption - 50) * 1.4;
-        } else {
-          cost += 10 * 1.4;
-          cost += (consumption - 60) * 1.5;
-        }
-      }
+        cost += consumed_water * 0.4;
     }
-  }
+   
 
-  // Display the total cost
-  cout << "Total cost: $" << cost << endl;
-return 0;
+    return cost;
 }
 
   
